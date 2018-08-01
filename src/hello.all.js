@@ -1,24 +1,24 @@
 require('babel-polyfill');
 
 // Services
-require('./modules/dropbox.js');
-require('./modules/facebook.js');
-require('./modules/flickr.js');
-require('./modules/foursquare.js');
-require('./modules/github.js');
-require('./modules/google.js');
-require('./modules/instagram.js');
-require('./modules/joinme.js');
-require('./modules/linkedin.js');
-require('./modules/soundcloud.js');
-require('./modules/twitter.js');
-require('./modules/vk.js');
-require('./modules/windows.js');
-require('./modules/yahoo.js');
+// WH only include used libraries to reduce size
+require('./modules/azureadv2.js');
+// require('./modules/googlev3.js');
+// require('./modules/dropbox.js');
+// require('./modules/google.js');
+// require('./modules/instagram.js');
+// require('./modules/joinme.js');
+// require('./modules/linkedin.js');
+// require('./modules/soundcloud.js');
+// require('./modules/twitter.js');
+// require('./modules/vk.js');
+// require('./modules/windows.js');
+// require('./modules/yahoo.js');
 
 // Environment tweaks
-require('./hello.phonegap.js');
-require('./hello.chromeapp.js');
+// WH: removed, not used
+// require('./hello.phonegap.js');
+// require('./hello.chromeapp.js');
 
 // Export HelloJS
 module.exports = require('./hello.js');
