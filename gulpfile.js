@@ -33,7 +33,7 @@ gulp.task('index_tests', () => {
 	// for the given files in the test directory, create an index
 	return gulp.src(['test/specs/**/*.js', '!test/specs/index.js'], (err, files) => {
 		// Write line to the index file
-		const index = files.map(name => `require('${name.replace(root, './')  }');`);
+		const index = files.map(name => `require('${name.replace(root, './')}');`);
 
 		fs.writeFileSync('test/specs/index.js', index.join('\n'));
 	});
@@ -73,6 +73,10 @@ gulp.task('build', () => {
 
 });
 
+gulp.task('build_maverick', () => {
+	buildJS('hello.all.js');
+});
+
 function buildJS(name) {
 
 	browserify({
@@ -105,7 +109,9 @@ function buildJS(name) {
 		.pipe(header(`/*! ${pkg.name} v${pkg.version} | (c) 2012-${(new Date()).getFullYear()} ${pkg.author.name} | ${pkg.license} ${pkg.homepage}/LICENSE */`))
 		.on('error', util.log)
 		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest('dist/'));
+		.pipe(gulp.dest('dist/'))
+		//.pipe(gulp.dest('you-can-add-extra-destination-path-here/'))
+	;
 }
 
 gulp.task('watch_bundle', () => gulp.watch(scripts_to_watch, {interval: 500}, ['bundle']));

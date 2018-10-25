@@ -46,6 +46,7 @@
     "debug": "gulp watch",
     "lint": "eslint ./",
     "build": "gulp build",
+    "build_maverick": "gulp build_maverick",
     "test": "gulp test && npm run test:browserstack",
     "test:browserstack": "bash browserstack.sh",
     "test:browserstack:env": "source .env.sh && npm run test:browserstack"
