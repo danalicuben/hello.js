@@ -15,7 +15,7 @@ const hello = require('../hello.js');
 			scope: {
 				// you can add as many scopes to the mapping as you want here
 				profile: 'user.read',
-				app_folder: 'files.readwrite.appfolder,files.readwrite’',
+				app_folder: 'files.readwrite.appfolder,files.readwrite',
 				offline_access: ''
 			},
 
